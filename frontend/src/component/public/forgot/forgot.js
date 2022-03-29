@@ -56,7 +56,7 @@ export const Forgot = () => {
     <div className='d-flex justify-content-center align-items-center flex-column ' style={{ height: '400px', width: '300px' }} >
       <div className='mt-3'> 
         <div className='d-flex justify-content-center align-items-center mt-5 p-1' style={{ height: '80px', width: '80px', border: '3px solid black', borderRadius: '50%' }}>
-          <div style={{ fontSize: '60px', paddingBottom: '25px', textAlign: 'center' }}> <IoLockClosedOutline /></div>
+          <div style={{ fontSize: '61px', paddingBottom: '25px', textAlign: 'center' }}> <IoLockClosedOutline /></div>
         </div>
       </div>
       <div className='text-center'>
