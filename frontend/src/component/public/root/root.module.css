@@ -1,0 +1,16 @@
+.eduimage{
+    /* margin-right: 30px;
+    background-color: aquamarine;
+    animation: move 3s linear 1s infinite alternate; */
+  /* background-size: cover; */
+ height:'900px';
+ width: 200px;
+}
+
+@keyframes move{
+    0%   {transform: translateY(15px);}
+    25%  {transform: translateY(0px);}
+    50%  {transform: translateY(-10px);}
+    75%  {transform: translateY(-20px);}
+    100% {transform: translateY(-30px);}
+}
