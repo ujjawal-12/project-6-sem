@@ -4,7 +4,7 @@
     animation: move 3s linear 1s infinite alternate; */
   /* background-size: cover; */
  height:'900px';
- width: 200px;
+ width: 200px; 
 }
 
 @keyframes move{

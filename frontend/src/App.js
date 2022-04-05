@@ -16,6 +16,7 @@ import { Forgot } from './component/public/forgot/forgot';
 import {useSelector} from 'react-redux'
 import Mail from './component/public/forgot/mail';
 import token from './component/private/tokens/tokenmethod';
+import AuthWrap from './component/public/authwrapper/authWrap';
 
 const App = () => {
 
@@ -27,9 +28,15 @@ const App = () => {
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={token ? <Navigate to="/dashboard" replace /> : <Root />}>
-            <Route path='/' element={<Signin />}></Route>
-            <Route path="signup" element={<Signup />}></Route>
-            <Route path="password_reset" element={<Forgot />}> </Route>
+            <Route path='home' element={<Home />}></Route>
+            <Route path="placement" element={<Placement />}></Route>
+            <Route path="academic" element={<Academic />}></Route>
+            <Route path="contact" element={<Contact />}></Route>
+            <Route path="auth" element={<AuthWrap/>}>
+               <Route path="signin" element={<Signin />}></Route>
+               <Route path="signup" element={<Signup />}></Route>
+               <Route path="signin/password_reset" element={<Forgot />}> </Route>
+            </Route>
           </Route>
           {/* mail route for change password  */}
           <Route path='password_link' element={token? <Navigate to="/dashboard" replace />:<Mail/>}></Route>

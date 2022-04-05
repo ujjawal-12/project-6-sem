@@ -71,7 +71,7 @@ export const Signin = () => {
       <form onSubmit={submitdata}>
         <div className='mt-5 position-relative' style={{ fontSize: "30px" }}> <span className='position-absolute start-25'><IoMdMail /></span><input type="email" placeholder='Email' value={formdata.email} onChange={(e) => setformdata({ ...formdata, email: e.target.value })} style={inputstyle}></input></div>
         <div className='mt-5 position-relative' style={{ fontSize: "30px" }}><span className='position-absolute start-25'><IoLockClosed /></span><input type="password" placeholder='Password' value={formdata.password} onChange={(e) => setformdata({ ...formdata, password: e.target.value })} style={inputstyle}></input></div>
-        <div className='mt-2' style={{ textAlign: "end", color: "blue" }}><span ><NavLink to="/password_reset" style={{ textDecoration: "none" }}>forgot password ?</NavLink></span></div>
+        <div className='mt-2' style={{ textAlign: "end", color: "blue" }}><span ><NavLink to="password_reset" style={{ textDecoration: "none" }}>forgot password ?</NavLink></span></div>
        {status && <div className="spinner-border text-success mt-4" style={{marginTop:'18px',marginLeft:'100px'}} role="status">
            <span className="visually-hidden ">Loading...</span>
         </div>} 
