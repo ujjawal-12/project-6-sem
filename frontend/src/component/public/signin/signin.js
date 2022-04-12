@@ -54,7 +54,27 @@ export const Signin = () => {
     if (formdata.email && formdata.password) {
       if (formdata.password.length >= 8) {
         setTimeout(() => {
-          axios.post("http://localhost:5000/signin", { "email": formdata.email, "password": formdata.password }).then(response => { if (response.data.res) { notifysuccess(response.data.res);  sessionStorage.setItem("user",formdata.email);  token.settoken ("token",response.data.token); dispatch(callsettokenaction(response.data.token)); setformdata({ email: '', password: '' }); setstatus(false); fun()} else { notifywarn(response.data.err); setformdata({ email: '', password: '' }); setstatus(false)} }).catch(err => {notifywarn(err.message);console.log("hello");setstatus(false)})
+          axios.post("http://localhost:5000/signin", { "email": formdata.email, "password": formdata.password })
+          .then(response => {
+             if (response.data.res) 
+             { notifysuccess(response.data.res);
+               sessionStorage.setItem("user",formdata.email);
+               sessionStorage.setItem("loginusername",response?.data?.username);
+               token.settoken ("token",response.data);
+               dispatch(callsettokenaction(response.data.token));
+               setformdata({ email: '', password: '' });
+               setstatus(false);
+               fun() } 
+             else { 
+               notifywarn(response.data.err); 
+               setformdata({ email: '', password: '' });
+               setstatus(false)
+              } 
+            })
+             .catch(err => {
+                notifywarn(err.message);
+                setstatus(false)
+              })
         }, 2000);
       }
       else {

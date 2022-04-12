@@ -9,7 +9,7 @@ async function SignIn(req, res) {
         const psswd = await bcrypt.compare(password, user.password);
         if (psswd) {
             const token = jwt.sign({ _id: user._id, name: user.name, email: user, email }, process.env.SECRET_KEY);
-            res.cookie("key", token).status(200).send({ res: 'sign in successfull', token: token });
+            res.cookie("key", token).status(200).send({ res: 'sign in successfull', token: token ,username : user.name});
         }
         else {
             res.status(200).send({ "err": "Wrong password" });

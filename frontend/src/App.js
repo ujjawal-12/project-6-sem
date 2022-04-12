@@ -28,7 +28,7 @@ const App = () => {
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={token ? <Navigate to="/dashboard" replace /> : <Root />}>
-            <Route path='home' element={<Home />}></Route>
+            <Route index element={<Home />}></Route>
             <Route path="placement" element={<Placement />}></Route>
             <Route path="academic" element={<Academic />}></Route>
             <Route path="addmission" element={<Addmission />}></Route>
@@ -42,9 +42,10 @@ const App = () => {
           {/* mail route for change password  */}
           <Route path='password_link' element={token ? <Navigate to="/dashboard" replace /> : <Mail />}></Route>
           {/* Private Routes */}
-          <Route path="/dashboard" element={token ? <Navbar /> : <Navigate to="/" replace />}>
+          <Route path="/dashboard" element={token ? <Root /> : <Navigate to="/" replace />}>
             {/* <Route index element={<Home />}></Route> */}
-            <Route path='home' element={<Home />}></Route>
+            <Route index element={<Home />}></Route>
+            <Route path="home" element={<Home />}></Route>
             <Route path="program" element={<Program />}></Route>
             <Route path="academic" element={<Academic />}></Route>
             <Route path="placement" element={<Placement />}></Route>
