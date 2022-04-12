@@ -8,7 +8,7 @@ export const Navbar = (props) => {
   const navigate = useNavigate()
   const dispatch = useDispatch();
   return (
-    <div className='container-fluid m-0 p-0'>
+    <div className='container-fluid m-0 p-0 '>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark " >
         <div className="container-fluid">
           <img src={img} className="rounded-3" width="200px" height="60px"></img>
