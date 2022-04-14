@@ -60,7 +60,7 @@ export const Signin = () => {
              { notifysuccess(response.data.res);
                sessionStorage.setItem("user",formdata.email);
                sessionStorage.setItem("loginusername",response?.data?.username);
-               token.settoken ("token",response.data);
+               token.settoken (response.data.token);
                dispatch(callsettokenaction(response.data.token));
                setformdata({ email: '', password: '' });
                setstatus(false);

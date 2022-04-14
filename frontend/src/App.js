@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Root } from './component/public/root/root';
 import { Signin } from './component/public/signin/signin';
@@ -17,11 +17,23 @@ import { useSelector } from 'react-redux'
 import Mail from './component/public/forgot/mail';
 import token from './component/private/tokens/tokenmethod';
 import AuthWrap from './component/public/authwrapper/authWrap';
+import { callsettokenaction } from './actions/loginaction';
+import { useDispatch } from 'react-redux';
 
 const App = () => {
-
+  const dispatch = useDispatch();
   let token = useSelector(state => state.login.token);
-
+  
+  useEffect(()=>{
+  if(sessionStorage.getItem("token")){
+    dispatch(callsettokenaction(sessionStorage.getItem("token")));
+    console.log("yes")
+  }
+  else{
+    dispatch(callsettokenaction(null));
+  }
+ },[sessionStorage.getItem("token")])
+  
   return (
     <div>
       <BrowserRouter>

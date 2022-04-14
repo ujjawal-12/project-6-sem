@@ -15,8 +15,8 @@ import { FaUserAlt ,FaHandPointRight } from "react-icons/fa";
 import {  Menu, Dropdown  } from "antd"
 import { DownOutlined } from '@ant-design/icons';
 
-const linkActive = { "borderBottom": "2px solid green", "color": "green", "textDecoration": "none", "paddingBottom": "3px" }
-const defaultLink = { "textDecoration": "none", "color": "aqua" }
+const linkActive = { "borderTop": "2px solid aqua", "color": "aqua", "textDecoration": "none", "paddingBottom": "9px","paddingTop": "9px" }
+const defaultLink = { "textDecoration": "none", "color": "white" }
 
 const menu = (
   <Menu>
@@ -37,7 +37,7 @@ export const Root = () => {
         <div  style={{ width: "15%", margin: "10px 1px 10px 2PX " }}><img className="rounded-3 img-fluid ms-3" src={img} width="180px" height="100px"></img></div>
         <div className='container ' style={key?{ width: "70%",paddingLeft:"45px" }:{ width: "80%",paddingLeft:"55px",paddingRight:"60px" }}>
           <marquee width="100%" direction="left" scrollamount="13">
-            <div style={{ marginTop: "25px", color: "pink", fontSize: "25px" }}>WELCOME TO NAAC A+ AFFILIATED COLLEGE IN UTTARAKHAND</div>
+            <div style={{ marginTop: "25px", color: "aqua", fontSize: "25px" }}>WELCOME TO NAAC A+ AFFILIATED COLLEGE IN UTTARAKHAND</div>
           </marquee>
         </div>
         {key && <div className='container d-flex justify-content-center align-items-center' style={{ width: "15%" }}>
@@ -50,28 +50,28 @@ export const Root = () => {
       </div>
       <div className='container bg-dark d-flex mt-2 rounded fs-5 py-4' style={{ "height": "50px","color":"teal" }} >
         <div
-          className=' d-flex justify-content-center align-items-center mx-1'
+          className=' d-flex justify-content-center align-items-center mx-1 h-100'
           style={{ "width": "100px" }}>
           <NavLink to={key? "home" : "/"} style={({ isActive }) => isActive ? linkActive :
             defaultLink}><span><ImHome></ImHome> </span>Home</NavLink>
         </div>
         <div
-          className=' d-flex justify-content-center align-items-center mx-1'
-          style={{ "width": "120px" }}>
+          className=' d-flex justify-content-center align-items-center mx-1 h-100'
+          style={{ "width": "130px" }}>
           <NavLink to="academic" style={({ isActive }) => isActive ? linkActive :
-            defaultLink}><span style={{"fontSize":"25px"}}><HiAcademicCap></HiAcademicCap> </span>Academic</NavLink>
+            defaultLink}><span ><HiAcademicCap></HiAcademicCap> </span>Academic</NavLink>
         </div>
         <div
-          className=' d-flex justify-content-center align-items-center mx-1'
+          className=' d-flex justify-content-center align-items-center mx-1 h-100'
           style={{ "width": "130px" }}>
           <NavLink to="placement" style={({ isActive }) => isActive ? linkActive :
             defaultLink}><span><RiChatPollFill /> </span>Placement</NavLink>
         </div>
         <div
-          className=' d-flex justify-content-center align-items-center mx-1'
+          className=' d-flex justify-content-center align-items-center mx-1 h-100'
           style={{ "width": "120px" }}>
           <NavLink to="contact" style={({ isActive }) => isActive ? linkActive :
-            defaultLink}><span style={{"fontSize":"25px"}}><AiFillContacts></AiFillContacts> </span>contact</NavLink>
+            defaultLink}><span ><AiFillContacts></AiFillContacts> </span>contact</NavLink>
         </div>
         
         {/* <div 
@@ -94,7 +94,7 @@ export const Root = () => {
         </div>
         <div
           className=' d-flex justify-content-center align-items-center mx-1'
-          style={{ "width": "78px" }}>
+          style={{ "width": "100px" }}>
           <NavLink to="apply" style={({ isActive }) => isActive ? linkActive :
             defaultLink}><span><FaHandPointRight></FaHandPointRight> </span>Apply</NavLink>
         </div></>}
