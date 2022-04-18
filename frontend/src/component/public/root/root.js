@@ -80,17 +80,18 @@ export const Root = () => {
             <NavLink to="auth/signin" style={({ isActive }) => isActive ? { "borderBottom": "1px solid teal", "color": "red" } : 
          { "textDecoration": "none" }}>SignIn</NavLink>
         </div> */}
+        
         <div
-          className=' d-flex justify-content-center align-items-center mx-1 '
-          style={{ "width": "140px" }}>
-          <NavLink to="addmission" style={({ isActive }) => isActive ? linkActive :
-            defaultLink} ><span><RiBankFill></RiBankFill> </span>Addmission</NavLink>
-        </div>
-        {key && <><div
           className=' d-flex justify-content-center align-items-center mx-1'
           style={{ "width": "120px" }}>
           <NavLink to="program" style={({ isActive }) => isActive ? linkActive :
             defaultLink}><span ><RiUserSettingsFill></RiUserSettingsFill> </span>Program</NavLink>
+        </div>
+        {key && <><div
+          className=' d-flex justify-content-center align-items-center mx-1 '
+          style={{ "width": "140px" }}>
+          <NavLink to="Addmission" style={({ isActive }) => isActive ? linkActive :
+            defaultLink} ><span><RiBankFill></RiBankFill> </span>Addmission</NavLink>
         </div>
           <div
             className=' d-flex justify-content-center align-items-center mx-1'
