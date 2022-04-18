@@ -2,25 +2,74 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import clgImg from "../../../images/college1.jpg"
 import dean from "../../../images/dean.jpg"
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import c1 from "../../../images/c1.jpg"
+import c2 from "../../../images/c2.jpg"
+import c3 from "../../../images/c3.jpg"
+import c4 from "../../../images/c4.jpg"
+import c5 from "../../../images/c5.jpg"
+import c6 from "../../../images/c6.jpg"
+import f1 from "../../../images/f1.jpg"
+import f2 from "../../../images/f2.jpg"
+import f3 from "../../../images/f3.jpg"
+import f4 from "../../../images/f4.jpg"
+import * as images from "./importimg"
+import Fcard from './fcard';
+// const handleDragStart = (e) => e.preventDefault();
+const responsive = {
+  0: { items: 1 },
+  568: { items: 2 },
+  1024: { items: 3 },
+};
+const items = [
+  <img src={c1}></img>,
+  <img src={c2}></img>,
+  <img src={c3}></img>,
+  <img src={c4}></img>,
+  <img src={c5}></img>,
+  <img src={c6}></img>,
+
+];
+
+const recuiter = [
+  <img src={images.rec1}></img>,
+  <img src={images.rec2}></img>,
+  <img src={images.rec3}></img>,
+  <img src={images.rec4}></img>,
+  <img src={images.rec5}></img>,
+  <img src={images.rec6}></img>,
+  <img src={images.rec7}></img>,
+  <img src={images.rec8}></img>,
+  <img src={images.rec9}></img>,
+  <img src={images.rec10}></img>,
+  <img src={images.rec11}></img>,
+  <img src={images.rec12}></img>,
+  <img src={images.rec13}></img>,
+  <img src={images.rec14}></img>,
+  <img src={images.rec15}></img>,
+
+]
 
 export const Home = () => {
   const token = useSelector(state => state.login.token)
+  
   return (
-    <div className='mt-3'>
+    <div className='mt-3'> 
       <div>
         <img src={clgImg} className="img-fluid" width="100%"></img>
       </div>
       <div className='container mt-5'>
-        <h2 className='text-center mb-3'>About Uttaranchal Institute of Management</h2>
+        <h2 className='text-center mb-3'>About College Of Computer Science</h2>
         <p style={{ "textAlign": "justify" }}>
-          <p style={{ "marginBottom": "15px", "fontSize": "18px" }}> UIM has been at the forefront of providing quality education in Management and commerce.
-            The Institute has been set up to create management professionals who can dynamically
-            explore the new avenues of entrepreneurial and management heights.</p><p style={{ "marginBottom": "15px", "fontSize": "18px" }}>University Management
+          <p style={{ "marginBottom": "15px", "fontSize": "16px" }}> CCS has been at the forefront of providing quality education in computer science.
+            The Institute has been set up to create High professionals who can dynamically
+            explore the new avenues of entrepreneurial and management heights.</p><p style={{ "marginBottom": "15px", "fontSize": "16px" }}>University Management
               and Business Study Programmes are value-driven and industry-need centric. They are specifically
               designed to meet corporate requirements. In the programme curriculum,
               the students get the experience of a true blend of academic excellence and the application of management
               practices. Students are encouraged to encompass in their studies, the integrative process of business and
-              management practices.</p><p style={{ "marginBottom": "15px", "fontSize": "18px" }}>Today, UIM is leading the way in offering excellent educational facilities,
+              management practices.</p><p style={{ "marginBottom": "15px", "fontSize": "16px" }}>Today, UIM is leading the way in offering excellent educational facilities,
                 faculty with impeccable academic credentials, and a plethora of programmes to choose from.
                 It is a much sought-after Institute for management studies and widely acclaimed for its sound
                 placement record. We have collaborations with the premier corporate houses for the internship,
@@ -30,19 +79,19 @@ export const Home = () => {
         </p>
       </div>
       <div className='container mt-4'>
-        <h2 className='text-center my-4'>Why Uttaranchal Institute of Management?</h2>
+        <h2 className='text-center my-4'>Why College of Computer Science?</h2>
         <ul style={{ "listStyle": "circle" }}>
-          <li>Uttaranchal Institute of Management is already a niche centre of learning.</li>
-          <li>Our Management and Commerce courses are value-driven and industry-need centric.</li>
+          <li>College of Computer Science is already a nice centre of learning.</li>
+          <li>Our Management and courses are value-driven and industry-need centric.</li>
           <li>We possess academic strength through our faculty with proven academic and industry credentials.</li>
           <li>We instill zest for excellence among our students and create an environment for them to encompass the comprehensive qualities of leadership, team work and global vision</li>
           <li>The institute continuously evolves its methodology to make it industry-compliant.</li>
           <li>Our experience in running multi-disciplinary courses has given us an edge over others to translate our experience into conspicuous benefits for our students.</li>
           <li>We provide our students a wide variety of study programs of both long and short duration to choose from.</li>
-          <li>We provide a balanced combination of academic and practical, business oriented content.</li>
+          <li>We provide a balanced combination of academic and practical, industry oriented content.</li>
           <li>We have collaborations with the premier corporate houses for the recruitment of our students.</li>
           <li>The activities undertaken in the institute go a long way in developing an all-round personality of the students that make them confident, communicative and ready to face the challenges of the world.</li>
-          <li>Our research programs are not only highly innovative, but also relevant to the existing Management and IT practices.</li>
+          <li>Our research programs are not only highly innovative, but also relevant to the existing IT practices.</li>
         </ul>
       </div>
       <div className='container mt-4'>
@@ -94,6 +143,54 @@ export const Home = () => {
               Students come and join us for a grand rendezvous to take you places in your life.</p></p>
         </div>
       </div>
+      <div className='container p-4' >
+        <h2 className='text-center'>Industry-Academic Collaborations</h2>
+       <div className='container ps-4 ms-5 mt-4'>
+       <AliceCarousel
+        mouseTracking
+        items={items}
+        autoPlay={true}
+        autoPlayInterval={1000}
+        touchTracking={true}
+        infinite={true}
+        responsive={responsive}
+        controlsStrategy="alternate"
+       />
+       </div>
+      </div>
+      <div className='container'>
+        <h2 className='text-center'>Our Faculity Members</h2>
+        <div className='container mt-3 d-flex justify-content-evenly align-items-center flex-wrap'>
+         <Fcard image={dean} name="Dr. Pradeep Suri" position="Dean"/>
+         <Fcard image={f1} name="Dr. Sonal Sharma" position="Professor"></Fcard>
+         <Fcard image={f2} name="Dr. Rajiv Kumar" position="Associate Professor"></Fcard>
+         <Fcard image={f3} name="Dr. Monisha Awasthi" position="Associate Professor"></Fcard>
+         <Fcard image={f4} name="Dr. Sunil Shukla" position="Associate Professor"></Fcard>
+         {/* <Fcard></Fcard> */}
+         {/* fcard */}
+         {/* <faculticard />
+         <faculticard />
+         <faculticard />
+         <faculticard /> */}
+
+        </div>
+      </div>
+      <div className='container p-4' >
+        <h2 className='text-center'>Our Top Recruiters</h2>
+       <div className='container ps-4 ms-5 mt-4'>
+       <AliceCarousel
+        mouseTracking
+        items={recuiter}
+        autoPlay={true}
+        autoPlayInterval={2000}
+        touchTracking={true}
+        infinite={true}
+        responsive={responsive}
+        controlsStrategy="alternate"
+       />
+       </div>
+    </div>
     </div>
   )
 }
+

@@ -1,0 +1,17 @@
+import rec1 from "../../../images/rec1.jpg"
+import rec2 from "../../../images/rec2.jpg"
+import rec3 from "../../../images/rec3.jpg"
+import rec4 from "../../../images/rec4.jpg"
+import rec5 from "../../../images/rec5.jpg"
+import rec6 from "../../../images/rec6.jpg"
+import rec7 from "../../../images/rec7.jpg"
+import rec8 from "../../../images/rec8.jpg"
+import rec9 from "../../../images/rec9.jpg"
+import rec10 from "../../../images/rec10.jpg"
+import rec11 from "../../../images/rec11.jpg"
+import rec12 from "../../../images/rec12.jpg"
+import rec13 from "../../../images/rec13.jpg"
+import rec14 from "../../../images/rec14.jpg"
+import rec15 from "../../../images/rec15.jpg"
+
+export {rec1,rec2,rec3,rec4,rec5,rec6,rec7,rec8,rec9,rec10,rec11,rec12,rec13,rec14,rec15}
