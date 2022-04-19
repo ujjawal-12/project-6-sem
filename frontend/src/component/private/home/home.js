@@ -14,6 +14,9 @@ import f1 from "../../../images/f1.jpg"
 import f2 from "../../../images/f2.jpg"
 import f3 from "../../../images/f3.jpg"
 import f4 from "../../../images/f4.jpg"
+import f5 from "../../../images/f5.jpeg"
+import f6 from "../../../images/f6.jpeg"
+
 import * as images from "./importimg"
 import Fcard from './fcard';
 // const handleDragStart = (e) => e.preventDefault();
@@ -166,6 +169,10 @@ export const Home = () => {
          <Fcard image={f2} name="Dr. Rajiv Kumar" position="Associate Professor"></Fcard>
          <Fcard image={f3} name="Dr. Monisha Awasthi" position="Associate Professor"></Fcard>
          <Fcard image={f4} name="Dr. Sunil Shukla" position="Associate Professor"></Fcard>
+         <Fcard image={f5} name="Mr. Abhishek Pathak" position="Assistant Professor"></Fcard>
+         <Fcard image={f6} name="Dr. Himani Joshi" position="Associate Professor"></Fcard>
+         
+         
          {/* <Fcard></Fcard> */}
          {/* fcard */}
          {/* <faculticard />

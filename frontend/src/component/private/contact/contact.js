@@ -26,7 +26,6 @@ export const Contact = () => {
               Dehradun, Uttarakhand, India<br/>
               Mb: 6399171122</p>
          </div>
-
       </div>
     </div>
   )

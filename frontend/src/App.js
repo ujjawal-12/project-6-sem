@@ -19,6 +19,7 @@ import token from './component/private/tokens/tokenmethod';
 import AuthWrap from './component/public/authwrapper/authWrap';
 import { callsettokenaction } from './actions/loginaction';
 import { useDispatch } from 'react-redux';
+import Error from './component/Error';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -64,8 +65,9 @@ const App = () => {
             <Route path="addmission" element={<Addmission />}></Route>
             <Route path="contact" element={<Contact />}></Route>
             <Route path="apply" element={<Apply />}></Route>
-            <Route path="logout" element={<Logout />}></Route>
+            <Route path="logout" element={()=>Logout()}></Route>
           </Route>
+          <Route path='*' element={<Error />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
