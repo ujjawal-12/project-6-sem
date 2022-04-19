@@ -8,29 +8,44 @@ import { ImHome } from "react-icons/im";
 import { HiAcademicCap } from "react-icons/hi";
 import { AiFillContacts } from "react-icons/ai";
 import 'antd/dist/antd.css';
-import { RiUserSettingsFill, RiBankFill, RiChatPollFill } from "react-icons/ri";
+import { RiUserSettingsFill, RiBankFill, RiChatPollFill,RiLogoutCircleRFill } from "react-icons/ri";
 import { GrUserNew } from "react-icons/gr";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaUserAlt, FaHandPointRight } from "react-icons/fa";
 import { Menu, Dropdown } from "antd"
 import { DownOutlined } from '@ant-design/icons';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom'
+import { Logout } from '../../private/logout/logout';
+import { callremovetokenaction } from '../../../actions/loginaction';
+import token from '../../private/tokens/tokenmethod';
 
 const linkActive = { "borderTop": "2px solid aqua", "color": "aqua", "textDecoration": "none", "paddingBottom": "9px", "paddingTop": "9px" }
 const defaultLink = { "textDecoration": "none", "color": "white" }
 
-const menu = (
-  <Menu>
-    <Menu.Item key="0">
-      <NavLink to="academic">Profile</NavLink>
-    </Menu.Item>
-    <Menu.Item key="1">
-      <NavLink to="/">Logout</NavLink>
-    </Menu.Item>
-  </Menu>
-);
 
 export const Root = () => {
   const key = useSelector((state) => state.login.token)
+  const navigate = useNavigate();
+   const dispatch = useDispatch();
+
+   const fun=()=>{ 
+    token.removetoken();
+    dispatch(callremovetokenaction(null));
+    navigate("/",{replace:true});
+  }
+
+  const menu = (
+    <Menu>
+      <Menu.Item key="0">
+        <NavLink to="academic">Profile</NavLink>
+      </Menu.Item>
+      <Menu.Item key="1">
+        <p onClick={()=>fun()}>Logout</p>
+      </Menu.Item>
+    </Menu>
+  );
+
   return (
     <div>
       <div className="container-fluid bg-dark mb-3" style={{ display: "flex" }} >
@@ -41,7 +56,7 @@ export const Root = () => {
           </marquee>
         </div>
         {key && <div className='container d-flex justify-content-center align-items-center' style={{ width: "15%" }}>
-          <Avatar name={sessionStorage.getItem("loginusername")} size="50" round={true} />
+          <Avatar name={sessionStorage.getItem("loginusername").toUpperCase()} size="50" round={true} />
           <Dropdown overlay={menu} trigger={['click']}>
             <span className="ant-dropdown-link text-light ms-2 " style={{ "fontSize": "22px" }} onClick={e => e.preventDefault()}>
               <IoIosArrowDown />
@@ -101,8 +116,8 @@ export const Root = () => {
           </div></>}
         <div className=' d-flex justify-content-center align-items-center ms-auto'
           style={{ "width": key ? "160" : "180" }}>
-          {key ? <NavLink to="logout" style={({ isActive }) =>
-            isActive ? linkActive : defaultLink}><span ><FaUserAlt></FaUserAlt> </span> Logout</NavLink> :
+          {key ? <NavLink to="logout" onClick={()=>fun()} style={({ isActive }) =>
+            isActive ? linkActive : defaultLink}><span ><RiLogoutCircleRFill></RiLogoutCircleRFill> </span> Logout</NavLink> :
             (<><span ><FaUserAlt></FaUserAlt> </span>&#160;<NavLink to="auth/signin" style={({ isActive }) =>
               isActive ? linkActive : defaultLink}>SignIn</NavLink> &#160;<span style={{ "color": "white" }}>/</span>
               <NavLink to="auth/signup" style={({ isActive }) =>
