@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import clgImg from "../../../images/college1.jpg"
+import clgImg from "../../../images/sonalmam.jpg"
 import dean from "../../../images/dean.jpg"
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
@@ -16,6 +16,8 @@ import f3 from "../../../images/f3.jpg"
 import f4 from "../../../images/f4.jpg"
 import f5 from "../../../images/f5.jpeg"
 import f6 from "../../../images/f6.jpeg"
+import f7 from "../../../images/f5.jpg"
+
 
 import * as images from "./importimg"
 import Fcard from './fcard';
@@ -56,9 +58,9 @@ const recuiter = [
 
 export const Home = () => {
   const token = useSelector(state => state.login.token)
-  
+
   return (
-    <div className='mt-3'> 
+    <div className='mt-3'>
       <div>
         <img src={clgImg} className="img-fluid" width="100%"></img>
       </div>
@@ -124,14 +126,28 @@ export const Home = () => {
         </div>
       </div>
       <div className='container d-flex justify-content-center align-items-center  p-4'>
-        <div className='w-40'>
-          <img src={dean}></img>
-          <h5 className='text-center'>Prof (Dr) Pradeep Suri</h5>
+        <div className='w-40 pt-5 mt-3 h-50'>
+          <img src={f1}></img>
+          <h5 className='text-center'>Prof (Dr) Sonal Sharma</h5>
           <p></p>
         </div>
         <div className='w-60'>
-          <h2 className='text-center display-5'>Meet our Dean's</h2>
-          <p className='ps-4'><p style={{ "marginBottom": "5px" }}>Learning in Practice </p><p style={{ "marginBottom": "5px" }}>Uttaranchal Institute of Management is a flagship institution of Uttaranchal
+          <h2 className='text-center display-5'>Dean's Welcome Note</h2>
+          <p className='ps-4'><p style={{ "marginBottom": "5px" }}>Learning in Practice </p><p style={{ "marginBottom": "5px" }}>
+            “Your Success is my Dream”<br></br>
+            On the onset I welcome you to Uttaranchal School of Computing Sciences (USCS), one of the best institutions which is meticulously designed to assist you develop your abilities and professional competences in the field of Computer Science.
+            Today is the world of innovation and no innovation can exist without the intervention of technology. Computers have already become an inseparable part of our life. As a consequence, it should come as no surprise that you have a variety of career options in the computer field like Software Developer, Software Engineer, Database Engineer, Cloud Architect, Data Scientist, Business Analyst, Web Designer/Developer, Cyber Security Engineer, to name a few. This uprises the need of technically sound Computer Specialists with core programming and analytical skills.
+            Our Curriculum based on Choice Based Credit System (CBCS) comprises of Open Electives, Discipline Electives is designed in sync with the latest National Education Policy manifest upon recognising and fostering unique capabilities of each student as well as provides flexible and holistic multidisciplinary education which ensures that students achieve high order of Bloom Taxonomy.
+            Our Project Based Learning (PBL) teaching style, in which students build projects in each language/technology learned throughout each semester, is highly valued by students and has assisted them in developing technical skills to identify, formulate and analyse computing problems using fundamental concepts of mathematics, computer science and research. It prepares the student as successful professionals ready for Industry, Government Sectors, Academia, Research, Entrepreneurial Pursuit and Consultancy firms. Our programs help students to learn ethical usage
+            of modern tools for implementing critical solutions to the problem
+            In which so ever top IT industry you step in, our students would there to mentor you. If you want to explore the frontiers of information technology and pursue a career in computers, you can be confident that you will gain a wide range of technical computing abilities as well as broad professional skills at USCS that will be valued in the job market.
+            “Join us for a rewarding career in computers that will lead to your life’s dream job.”
+
+          </p></p>
+
+
+
+          {/* Uttaranchal Institute of Management is a flagship institution of Uttaranchal
             University, carefully crafted to help you expand your leadership skills and professional competencies.
             Our approach to teaching and learning allows you to customize your learning experience in the domain
             of leadership, innovation, negotiation and strategy. By becoming a part of us, you’ll gain vast exposure
@@ -143,39 +159,41 @@ export const Home = () => {
             sphere and any part of the world. Here, each day we try to answer one question: “What will you do?”
             because that’s the truest way to train our students for the larger question of their life that matters most,
             even beyond the campus: “What difference will you make in the world?”<p style={{ "marginTop": "5px" }}>
-              Students come and join us for a grand rendezvous to take you places in your life.</p></p>
+              Students come and join us for a grand rendezvous to take you places in your life.</p></p> */}
         </div>
       </div>
       <div className='container p-4' >
         <h2 className='text-center'>Industry-Academic Collaborations</h2>
-       <div className='container ps-4 ms-5 mt-4'>
-       <AliceCarousel
-        mouseTracking
-        items={items}
-        autoPlay={true}
-        autoPlayInterval={1000}
-        touchTracking={true}
-        infinite={true}
-        responsive={responsive}
-        controlsStrategy="alternate"
-       />
-       </div>
+        <div className='container ps-4 ms-5 mt-4'>
+          <AliceCarousel
+            mouseTracking
+            items={items}
+            autoPlay={true}
+            autoPlayInterval={1000}
+            touchTracking={true}
+            infinite={true}
+            responsive={responsive}
+            controlsStrategy="alternate"
+          />
+        </div>
       </div>
       <div className='container'>
         <h2 className='text-center'>Our Faculity Members</h2>
         <div className='container mt-3 d-flex justify-content-evenly align-items-center flex-wrap'>
-         <Fcard image={dean} name="Dr. Pradeep Suri" position="Dean"/>
-         <Fcard image={f1} name="Dr. Sonal Sharma" position="Professor"></Fcard>
-         <Fcard image={f2} name="Dr. Rajiv Kumar" position="Associate Professor"></Fcard>
-         <Fcard image={f3} name="Dr. Monisha Awasthi" position="Associate Professor"></Fcard>
-         <Fcard image={f4} name="Dr. Sunil Shukla" position="Associate Professor"></Fcard>
-         <Fcard image={f5} name="Mr. Abhishek Pathak" position="Assistant Professor"></Fcard>
-         <Fcard image={f6} name="Dr. Himani Joshi" position="Associate Professor"></Fcard>
-         
-         
-         {/* <Fcard></Fcard> */}
-         {/* fcard */}
-         {/* <faculticard />
+          {/* <Fcard image={dean} name="Dr. Pradeep Suri" position="Dean" /> */}
+          <Fcard image={f1} name="Dr. Sonal Sharma" position="Dean"></Fcard>
+          <Fcard image={f2} name="Dr. Rajiv Kumar" position="Associate Professor"></Fcard>
+          <Fcard image={f3} name="Dr. Monisha Awasthi" position="Associate Professor"></Fcard>
+          <Fcard image={f4} name="Dr. Sunil Shukla" position="Associate Professor"></Fcard>
+          <Fcard image={f5} name="Mr. Abhishek Pathak" position="Assistant Professor"></Fcard>
+          <Fcard image={f6} name="Dr. Himani Maheswari" position="Associate Professor"></Fcard>
+          <Fcard image={f7} name="Ishteyaaq Ahmad" position="Assistant Professor"></Fcard>
+
+
+
+          {/* <Fcard></Fcard> */}
+          {/* fcard */}
+          {/* <faculticard />
          <faculticard />
          <faculticard />
          <faculticard /> */}
@@ -184,19 +202,26 @@ export const Home = () => {
       </div>
       <div className='container p-4' >
         <h2 className='text-center'>Our Top Recruiters</h2>
-       <div className='container ps-4 ms-5 mt-4'>
-       <AliceCarousel
-        mouseTracking
-        items={recuiter}
-        autoPlay={true}
-        autoPlayInterval={2000}
-        touchTracking={true}
-        infinite={true}
-        responsive={responsive}
-        controlsStrategy="alternate"
-       />
-       </div>
-    </div>
+        <div className='container ps-4 ms-5 mt-4'>
+          <AliceCarousel
+            mouseTracking
+            items={recuiter}
+            autoPlay={true}
+            autoPlayInterval={2000}
+            touchTracking={true}
+            infinite={true}
+            responsive={responsive}
+            controlsStrategy="alternate"
+          />
+        </div>
+      </div>
+      <div className='mb-5'>
+        <h1 className='text-center mb-3'>Video</h1>
+        <div className='d-flex justify-content-center aligns-item-center mb-4 '>
+          <iframe width="700" height="400" src="https://www.youtube.com/embed/1lOGlxngJHQ?autoplay=1&mute=1">
+          </iframe>
+        </div>
+      </div>
     </div>
   )
 }

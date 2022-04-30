@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import "./index.css";
 import { Provider } from 'react-redux';
-import  "../node_modules/bootstrap/dist/css/bootstrap.min.css"
-import  "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import "../node_modules/bootstrap/dist/js/bootstrap.min.js"
 import store from './store/store';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-    <App />
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
