@@ -218,7 +218,7 @@ export const Home = () => {
       <div className='mb-5'>
         <h1 className='text-center mb-3'>Video</h1>
         <div className='d-flex justify-content-center aligns-item-center mb-4 '>
-          <iframe width="700" height="400" src="https://www.youtube.com/embed/1lOGlxngJHQ?autoplay=1&mute=1">
+          <iframe width="700" height="400" src="https://www.youtube.com/embed/1lOGlxngJHQ?autoplay=0&mute=0">
           </iframe>
         </div>
       </div>

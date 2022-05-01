@@ -5,7 +5,7 @@ export const BscHons = () => {
     const navigate = useNavigate()
     return (
         <div>
-            <div className="alert alert-primary" role="alert">
+            <div className="alert alert-primary fs-3" role="alert">
                 B.Sc.(Hons.) Computer Science
             </div>
             <div className="p-3">
@@ -44,11 +44,11 @@ export const BscHons = () => {
                     </div>
                     <div className="d-flex justify-content-center align-items-center border border-dark">
                         <div className="text-center border border-dark pt-4" style={{ "width": "20%", "height": "100px" }}>Fee Structure:</div>
-                        <div className="text-center border border-dark pt-4" style={{ "width": "80%", "height": "100px" }}> Click Here</div>
+                        <div className="text-center border border-dark pt-4" style={{ "width": "80%", "height": "100px" }}><a href="https://drive.google.com/file/d/1JReokMn96L58rWDmRIXUzN7oLEau3vkj/view?usp=sharing"> Click Here</a></div>
                     </div>
                     <div className="d-flex justify-content-center align-items-center border border-dark">
                         <div className="text-center border border-dark pt-4" style={{ "width": "20%", "height": "100px" }}>Programme Structure:</div>
-                        <div className="text-center border border-dark pt-4" style={{ "width": "80%", "height": "100px" }}>Click Here</div>
+                        <div className="text-center border border-dark pt-4" style={{ "width": "80%", "height": "100px" }}><a href="https://drive.google.com/file/d/13Gzr0LFHEEmaFgbi1A9PV-pHFU1qCKy3/view?usp=sharing">Click Here</a></div>
                     </div>
                     <div className="d-flex justify-content-center align-items-center border border-dark">
                         <div className="text-center border border-dark pt-4" style={{ "width": "20%", "height": "140px" }}>Admission Procedure:</div>

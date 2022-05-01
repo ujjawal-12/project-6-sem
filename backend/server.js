@@ -5,6 +5,7 @@ const bodyparser = require('body-parser');
 const cookieparser = require('cookie-parser');
 const pubroute = require('./routes/public/publicRoute');
 const dbConn = require('./database/db_conn/dbConn');
+const privateroute = require('./routes/private/privateRoute');
 const server = express();
 
 env.config();
@@ -13,5 +14,7 @@ server.use(cors());
 server.use(cookieparser());
 server.use(bodyparser.json());
 server.use('/', pubroute);
+server.use('/', privateroute);
+
 
 server.listen(process.env.PORT, () => console.log('server listen at port', process.env.PORT));

@@ -44,9 +44,13 @@ export const Signin = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   let [formdata, setformdata] = useState({ email: '', password: '' });
-  const [status,setstatus] = useState(false);
+  const [status, setstatus] = useState(false);
 
-  const fun = () => {navigate("/dashboard", { replace: true }) }
+  const fun = () => { navigate("/dashboard", { replace: true }) }
+  // const admin = () => {
+  //   console.log("admin");
+  //   navigate("/dashboard/admin", { replace: true });
+  //  }
 
   const submitdata = (e) => {
     e.preventDefault();
@@ -55,26 +59,29 @@ export const Signin = () => {
       if (formdata.password.length >= 8) {
         setTimeout(() => {
           axios.post("http://localhost:5000/signin", { "email": formdata.email, "password": formdata.password })
-          .then(response => {
-             if (response.data.res) 
-             { notifysuccess(response.data.res);
-               sessionStorage.setItem("user",formdata.email);
-               sessionStorage.setItem("loginusername",response?.data?.username);
-               token.settoken (response.data.token);
-               dispatch(callsettokenaction(response.data.token));
-               setformdata({ email: '', password: '' });
-               setstatus(false);
-               fun() } 
-             else { 
-               notifywarn(response.data.err); 
-               setformdata({ email: '', password: '' });
-               setstatus(false)
-              } 
-            })
-             .catch(err => {
-                notifywarn(err.message);
+            .then(response => {
+              if (response.data.res) {
+                notifysuccess(response.data.res);
+                sessionStorage.setItem("user", formdata.email);
+                sessionStorage.setItem("loginusername", response?.data?.username);
+                token.settoken(response.data.token);
+                dispatch(callsettokenaction(response.data.token));
+                setformdata({ email: '', password: '' });
+                setstatus(false);
+
+                fun()
+
+              }
+              else {
+                notifywarn(response.data.err);
+                setformdata({ email: '', password: '' });
                 setstatus(false)
-              })
+              }
+            })
+            .catch(err => {
+              notifywarn(err.message);
+              setstatus(false)
+            })
         }, 2000);
       }
       else {
@@ -92,9 +99,9 @@ export const Signin = () => {
         <div className='mt-5 position-relative' style={{ fontSize: "30px" }}> <span className='position-absolute start-25'><IoMdMail /></span><input type="email" placeholder='Email' value={formdata.email} onChange={(e) => setformdata({ ...formdata, email: e.target.value })} style={inputstyle}></input></div>
         <div className='mt-5 position-relative' style={{ fontSize: "30px" }}><span className='position-absolute start-25'><IoLockClosed /></span><input type="password" placeholder='Password' value={formdata.password} onChange={(e) => setformdata({ ...formdata, password: e.target.value })} style={inputstyle}></input></div>
         <div className='mt-2' style={{ textAlign: "end", color: "blue" }}><span ><NavLink to="password_reset" style={{ textDecoration: "none" }}>forgot password ?</NavLink></span></div>
-       {status && <div className="spinner-border text-success mt-4" style={{marginTop:'18px',marginLeft:'100px'}} role="status">
-           <span className="visually-hidden ">Loading...</span>
-        </div>} 
+        {status && <div className="spinner-border text-success mt-4" style={{ marginTop: '18px', marginLeft: '100px' }} role="status">
+          <span className="visually-hidden ">Loading...</span>
+        </div>}
         <div className=' text-center mt-5' ><button type='submit' className='btn btn-primary' style={{ fontSize: '20px', width: '100%', padding: '6px' }}>SignIn</button></div>
         <ToastContainer />
       </form >
